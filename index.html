@@ -2,12 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/logos/bookwarm.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Svelte</title>
+   
+    <body>
+      <div id="app"></div>
+      <script type="module" src="/src/main.js"></script>
+    </body>
+
+    <script>
+      /**
+       * @param {string[]} items
+       */
+      function random_item(items) {
+        return items[Math.floor(Math.random()*items.length)];     
+      }
+
+      let copypasta1 = ['ngọn lửa sưởi ấm tâm hồn', 'ngọn nến soi sáng tương lai', 'ngọn đuốc thổi bừng đam mê',
+                        'ánh dương chói lòa', 'ánh đèn bừng tỏ', 'hào quang rực sáng', 'ngọn lửa thiêng của tri thức',
+                        // A bunch of ngọn lửa sưởi ấm tâm hồn to increase the chance of it being picked
+                        'ngọn lửa sưởi ấm tâm hồn', 'ngọn lửa sưởi ấm tâm hồn', 'ngọn lửa sưởi ấm tâm hồn',
+                        'ngọn lửa sưởi ấm tâm hồn', 'ngọn lửa sưởi ấm tâm hồn', 'ngọn lửa sưởi ấm tâm hồn'
+      ];
+      let copypasta2 = ['nhiều đêm dài sương mù đông tuyết rơi hoài lòng ai đang nhớ nhà', 'trường hợp muốn được GPA 4.0', 
+                        'những ngày mùa đông lạnh thấu nhưng cha vẫn chưa về, mẹ cười nhưng con biết mẹ lo lắm cha ơi',
+                        'nhiều đêm nằm nghĩ nên mãi gầy', 'khi ánh bình minh sẽ không còn nơi đây',
+                        // A bunch of mr quang tèo to... ya know
+                        'nhiều đêm dài sương mù đông tuyết rơi hoài lòng ai đang nhớ nhà',
+                        'nhiều đêm dài sương mù đông tuyết rơi hoài lòng ai đang nhớ nhà',
+                        'nhiều đêm dài sương mù đông tuyết rơi hoài lòng ai đang nhớ nhà',
+                        'nhiều đêm dài sương mù đông tuyết rơi hoài lòng ai đang nhớ nhà',
+      ];
+      let copypasta = random_item(copypasta1) + ' trong ' + random_item(copypasta2) + '!';
+
+      document.title = 'Bookwarm - Bởi vì sách là ' + copypasta;
+    </script>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
 </html>

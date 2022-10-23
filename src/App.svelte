@@ -2,9 +2,12 @@
   import logo from './assets/logos/bookwarm.png'
   import themesong from './assets/sounds/Ching Cheng Hanji - Peng Lexer Remix.mp3'
   import Counter from './lib/Counter.svelte'
+
+  let bgImage = './assets/backgrounds/book_burning_wiki.jpg'
 </script>
 
 <main>
+  <link rel="icon" href={logo} />
   <div>
     <img src={logo} class="logo bookwarm" alt="Bookwarm Logo" />
   </div>
@@ -19,15 +22,17 @@
 
   <h1>🅱𝕠ⓞ🅺ⓦ🅐Ɽ🄼</h1>
   <h2>🅱a tôi👨 nói👄, có 3️⃣ thứ quan trọng ❗ nhất 👍 trong cuộc đời🧬 bạn🙏:</h2>
-  <h3>Ba👨🏽 của bạn là ai?😤😤😤</h3>
-  <h3>&emsp &emsp &emsp &emsp Bố👨🏻 của bạn là ai?🥺🥺🥺</h3>
-  <h3>&emsp &emsp &emsp &emsp &emsp &emsp &emsp &emsp Và sách📚 của bạn?🧠🧠🧠</h3>
-  <h2>Với tôi, sách vừa là bạn, vừa là bố*!</h2>
+  <h3>Ba👨🏽 của bạn là ai❔😤😤😤</h3>
+  <h3>&emsp &emsp &emsp &emsp Bố👨🏻 của bạn là ai❓🥺🥺🥺</h3>
+  <h3>&emsp &emsp &emsp &emsp &emsp &emsp &emsp &emsp Và sách📚 của bạn❓❔🧠🧠🧠</h3>
+  <h2>Với tôi, sách vừa là 🅱ạn, vừa là 🅱ố*!</h2>
   <h6 style="text-align: right">Bố = Thầy😲😲😲</h6>
 
   <div class="card">
-    <Counter />
+    <Counter/>
   </div>
+
+
 </main>
 
 <style>

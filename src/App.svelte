@@ -3,38 +3,49 @@
   import themesong from './assets/sounds/Ching Cheng Hanji - Peng Lexer Remix.mp3'
 
   import { Router, Route, Link } from 'svelte-navigator'
+  import About from './routes/about/+page.svelte'
 </script>
 
-<main>
-  <!--Favicon-->
-  <link rel="icon" href={logo} />
-  <div>
-    <img src={logo} class="logo bookwarm" alt="Bookwarm Logo" />
-  </div>
+<Router>
+  <!--Navigation Bar-->
+  <nav>
+    <Link to="/">Home</Link>
+    <Link to="about">About</Link>
+  </nav>
 
-  <!--Background-->
-  <div class="background"></div>
-
-  <!--Theme Song-->
-  <div>
-    <audio controls autoplay>
-      <source src={themesong} type="audio/mpeg">
-    </audio>
-    <h5 style="text-align: left">(っ◔◡◔)っ ♥ ~một bản nhạc lofi nhẹ nhàng~ ♥</h5>
-    <h5 style="text-align: right">( ͡° ͜ʖ ͡°) ♥ ~trước khi bạn khám phá thế giới kì diệu của...~ ♥</h5>
-  </div>
-
-  <!--Index Page-->
-  <div id="index-name">
-    🔥📚🔥<name>🅱𝕠ⓞ🅺ⓦ🅐Ɽ🄼</name>🔥📚🔥
-  </div>
-  <h2>🅱a tôi👨 nói👄, có 3️⃣ thứ quan trọng ❗ nhất 👍 trong cuộc đời🧬 bạn🙏:</h2>
-  <h3>Ba👨🏽 của bạn là ai❔😤😤😤</h3>
-  <h3>&emsp &emsp &emsp &emsp Bố👨🏻 của bạn là ai❓🥺🥺🥺</h3>
-  <h3>&emsp &emsp &emsp &emsp &emsp &emsp &emsp &emsp Và sách📚 của bạn❓❔❓❔🧠🧠🧠</h3>
-  <h2>Với tôi, sách vừa là 🅱ạn, vừa là 🅱ố*!</h2>
-  <h6 style="text-align: right">Bố = Thầy😲😲😲</h6>
-</main>
+  <main>
+    <!--Routes-->
+    <Route path="about" component={About}/>
+    
+    <Route>
+			<!--Logo-->
+      <link rel="icon" href={logo} />
+      <div>
+        <img src={logo} class="logo bookwarm" alt="Bookwarm Logo" />
+      </div>
+    
+      <!--Theme Song-->
+      <div>
+        <audio controls autoplay>
+          <source src={themesong} type="audio/mpeg">
+        </audio>
+        <h5 style="text-align: left">(っ◔◡◔)っ ♥ ~một bản nhạc lofi nhẹ nhàng~ ♥</h5>
+        <h5 style="text-align: right">( ͡° ͜ʖ ͡°) ♥ ~trước khi bạn khám phá thế giới kì diệu của...~ ♥</h5>
+      </div>
+    
+      <!--Index Page-->
+      <div id="index-name">
+        🔥📚🔥<name>🅱𝕠ⓞ🅺ⓦ🅐Ɽ🄼</name>🔥📚🔥
+      </div>
+      <h2>🅱a tôi👨 nói👄, có 3️⃣ thứ quan trọng ❗ nhất 👍 trong cuộc đời🧬 bạn🙏:</h2>
+      <h3>Ba👨🏽 của bạn là ai❔😤😤😤</h3>
+      <h3>&emsp &emsp &emsp &emsp Bố👨🏻 của bạn là ai❓🥺🥺🥺</h3>
+      <h3>&emsp &emsp &emsp &emsp &emsp &emsp &emsp &emsp Và sách📚 của bạn❓❔❓❔🧠🧠🧠</h3>
+      <h2>Với tôi, sách vừa là 🅱ạn, vừa là 🅱ố*!</h2>
+      <h6 style="text-align: right">Bố = Thầy😲😲😲</h6>
+		</Route>
+  </main>
+</Router>
 
 <style>
   .logo {

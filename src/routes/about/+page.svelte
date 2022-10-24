@@ -1,4 +1,11 @@
 <script>
-    /** @type {import('./$types').PageData} */
-    export let data;
+
 </script>
+
+<main>
+    ANH BẠN À, TÔI CÓ THỂ NGỦ TRƯA ĐƯỢC KHÔNG?
+</main>
+
+<style>
+
+</style>

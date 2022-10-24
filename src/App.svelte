@@ -4,18 +4,38 @@
 
   import { Router, Route, Link } from 'svelte-navigator'
   import About from './routes/about/+page.svelte'
+  import Authors from './routes/authors/+page.svelte'
+  import Books from './routes/books/+page.svelte'
+  import Publishers from './routes/publishers/+page.svelte'
+  import Categories from './routes/categories/+page.svelte'
+  import Newsfeed from './routes/newsfeed/+page.svelte'
+  import Users from './routes/users/+page.svelte'
 </script>
 
 <Router>
   <!--Navigation Bar-->
-  <nav>
+  <div class="navbar">
     <Link to="/">Home</Link>
+    <Link to="newsfeed">Newsfeed</Link>
     <Link to="about">About</Link>
-  </nav>
+    <Link to="users">Users</Link>
+    
+    <Link to="authors">Authors</Link>
+    <Link to="books">Books</Link>
+    <Link to="publishers">Publishers</Link>
+    <Link to="categories">Categories</Link>
+  </div>
 
   <main>
     <!--Routes-->
     <Route path="about" component={About}/>
+    <Route path="authors" component={Authors}/>
+    <Route path="books" component={Books}/>
+    <Route path="publishers" component={Publishers}/>
+    <Route path="categories" component={Categories}/>
+    <Route path="newsfeed" component={Newsfeed}/>
+    <Route path="users" component={Users}/>
+    
     
     <Route>
 			<!--Logo-->
@@ -29,6 +49,7 @@
         <audio controls autoplay>
           <source src={themesong} type="audio/mpeg">
         </audio>
+        <h5><i>Theme Song: Ching Cheng Hanji - Peng Lexer Remix</i></h5>
         <h5 style="text-align: left">(っ◔◡◔)っ ♥ ~một bản nhạc lofi nhẹ nhàng~ ♥</h5>
         <h5 style="text-align: right">( ͡° ͜ʖ ͡°) ♥ ~trước khi bạn khám phá thế giới kì diệu của...~ ♥</h5>
       </div>
@@ -49,12 +70,13 @@
 
 <style>
   .logo {
-    animation: App-logo-spin infinite 4s linear;
+    animation: App-logo-spin infinite 5s linear;
     height: 6em;
     padding: 1.5em;
     will-change: filter;
     pointer-events: none;
     filter: drop-shadow(0 0 2em #ff0000aa);
+    position: relative;
   }
 
   @keyframes App-logo-spin {

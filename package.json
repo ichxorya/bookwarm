@@ -1,21 +1,27 @@
 {
   "name": "bookwarm",
   "version": "1.0.0",
-  "description": "A next project generated based on a UIDL document",
+  "description": "A NextJS project, which frontend was built with the help of TeleportHQ.",
   "main": "index.js",
   "scripts": {
+    "lint": "next lint",
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "export": "next export"
   },
-  "author": "TeleportHQ",
+  "author": "ichxorya",
   "license": "MIT",
   "dependencies": {
+    "mysql2": "^2.3.3",
     "next": "^12.1.0",
+    "prop-types": "15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "prop-types": "15.7.2"
+    "react-dom": "^17.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "8.26.0",
+    "eslint-config-next": "13.0.0",
+    "sass": "^1.55.0"
+  }
 }

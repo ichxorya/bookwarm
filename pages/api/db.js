@@ -11,14 +11,14 @@ export default async function handler(req, res) {
     password: process.env.DB_PASSWORD,
   });
   try {
-    const query = "SELECT * FROM cunny";
+    const query = "SELECT id, uoh FROM cunny";
     const values = [];
     const [data] = await dbconnection.execute(query, values);
     dbconnection.end();
 
-    res.status(200).json({ products: data });
+    res.status(200).json({ exampledb: data });
+    
   } catch (error) {
-    // unhide to check error
-    // res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 }

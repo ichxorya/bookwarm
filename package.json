@@ -12,10 +12,20 @@
   "author": "TeleportHQ",
   "license": "MIT",
   "dependencies": {
+    "mysql2": "^2.3.3",
     "next": "^12.1.0",
+    "prop-types": "15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "prop-types": "15.7.2"
+    "react-dom": "^17.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-next": "^13.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "sass": "^1.55.0"
+  }
 }

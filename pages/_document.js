@@ -27,7 +27,7 @@ class CustomDocument extends Document {
           ></style>
           <link
             rel="shortcut icon"
-            href="/playground_assets/bookwarm.png"
+            href="assets/logos/bookwarm.png"
             type="icon/png"
             sizes="32x32"
           ></link>

@@ -3,6 +3,8 @@ import Head from 'next/head'
 
 import NavbarNotHome from '../components/navbar-not-home'
 import FooterWithCredits from '../components/footer-with-credits'
+import { imgLoader } from '../utils/imgLoader'
+import Image from 'next/image';
 
 const Authors = (props) => {
   return (

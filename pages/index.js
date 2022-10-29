@@ -1,30 +1,55 @@
 import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import { NextSeo } from 'next-seo'
+import Image from 'next/image'
+import { imgLoader } from '../utils/imgLoader'
 
 import FooterWithCredits from '../components/footer-with-credits'
 
+// Generate a random title
+const randomTitle = () => {
+  let copypasta1 = ['ngọn lửa sưởi ấm tâm hồn', 'ngọn nến soi sáng tương lai', 'ngọn đuốc thổi bừng đam mê',
+                    'ánh dương chói lòa', 'ánh đèn bừng tỏ', 'hào quang rực sáng', 'ngọn lửa thiêng của tri thức',
+                    // A bunch of ngọn lửa sưởi ấm tâm hồn to increase the chance of it being picked
+                    'ngọn lửa sưởi ấm tâm hồn', 'ngọn lửa sưởi ấm tâm hồn', 'ngọn lửa sưởi ấm tâm hồn',
+                    'ngọn lửa sưởi ấm tâm hồn', 'ngọn lửa sưởi ấm tâm hồn', 'ngọn lửa sưởi ấm tâm hồn'
+  ];
+      let copypasta2 = [
+        'trường hợp muốn được GPA 4.0',
+        'nhiều đêm dài sương mù đông tuyết rơi hoài lòng ai đang nhớ nhà',
+        'nhiều đêm ngồi học bài mama à đừng xót xa',
+        'nhiều đêm dài ai còn đang vẫn miệt mài đợi chờ hình bóng ai',
+        'nhiều đêm dài ai còn đang ngóng trông hoài đợi chờ ngày nắng mai',
+        'nhiều đêm tối trên đồi bóc quýt lowkeyboy có ai day dứt đơn côi lẻ loi chắp tay ngó lên trời',
+        'nhiều ngày lênh đênh trên bến mặt trời và cho ta thấy muôn loài',
+        'nhiều ngày lênh đênh trên bến mặt trời và mấy con rắn săn mồi',
+  ];
+  let copypasta = copypasta1[Math.floor(Math.random()*copypasta1.length)] 
+                + ' trong ' + copypasta2[Math.floor(Math.random()*copypasta2.length)] + '!';
+
+  return 'Bookwarm - Bởi vì sách là ' + copypasta;
+}
+
 const Home = (props) => {
+  const title = randomTitle()
+
   return (
     <>
       <div className="home-container">
-        <Head>
-          <title>Bookwarm</title>
-          <meta property="og:title" content="Bookwarm" />
-        </Head>
+        <NextSeo
+        title={title} 
+        />
         <div data-role="Header" className="home-navbar-container">
           <div className="home-navbar">
             <div className="home-left-side">
-              <img
-                alt="image"
-                src="https://cdn.discordapp.com/attachments/1034048281761828955/1034422539218329670/bookwarm.png"
-                className="home-image"
-              />
-              <div data-type="BurgerMenu" className="home-burger-menu">
-                <svg viewBox="0 0 1024 1024" className="home-icon">
-                  <path d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"></path>
-                </svg>
-              </div>
+            <Image
+              loader={imgLoader}
+              src="assets\logos\bookwarm.png"
+              alt="Bookwarm Mini Logo"
+              width={48}
+              height={48}
+            />
               <div className="home-links-container">
                 <a href="#frontpage" className="home-link anchor">
                   Trang chủ
@@ -52,10 +77,11 @@ const Home = (props) => {
             </div>
             <div data-type="MobileMenu" className="home-mobile-menu">
               <div className="home-container1">
-                <img
-                  alt="image"
+                <Image
+                  loader={imgLoader}
                   src="https://play.teleporthq.io/static/svg/default-img.svg"
-                  className="home-image1"
+                  alt="defautl image"
+                  layout="fill"
                 />
                 <div data-type="CloseMobileMenu" className="home-close-menu">
                   <svg viewBox="0 0 1024 1024" className="home-icon2">
@@ -180,10 +206,12 @@ const Home = (props) => {
                 <span className="home-heading3 card-Heading">
                   Chúng ta là gigachad
                 </span>
-                <img
-                  alt="image"
-                  src="https://cdn.discordapp.com/attachments/1034048281761828955/1034408075643342848/unknown.png"
-                  className="home-image2"
+                <Image
+                  loader={imgLoader}
+                  src="assets/backgrounds/canyoufeelmyheart.jpg"
+                  alt="canyoufeelmyheart"
+                  width={222}
+                  height={125}
                 />
               </div>
             </div>
@@ -334,13 +362,20 @@ const Home = (props) => {
                 <br></br>
               </h1>
             </div>
-            <img
-              id="logo"
-              alt="image"
-              src="https://cdn.discordapp.com/attachments/1034048281761828955/1034422539218329670/bookwarm.png"
-              loading="eager"
-              className="home-image3"
+            <img 
+              src="assets\logos\bookwarm.png" 
+              alt="🐱💿"
+              height="333"
+              width="333"
+              className="logo-spinning"
             />
+            
+            <div>
+              <audio autoPlay loop>
+                <source src="assets/sounds/Ching Cheng Hanji - Peng Lexer Remix.mp3" type="audio/mp3" />
+              </audio>
+            </div>
+
           </div>
           <h1 className="home-about-heading1">
             <span className="home-text76">MIERU;PROJECTS - ICHXORYA 2022</span>
@@ -410,11 +445,6 @@ const Home = (props) => {
             align-self: center;
             object-fit: cover;
             margin-right: var(--dl-space-space-doubleunit);
-          }
-          .home-burger-menu {
-            display: none;
-            align-items: flex-start;
-            flex-direction: column;
           }
           .home-icon {
             width: 36px;
@@ -1091,12 +1121,6 @@ const Home = (props) => {
             }
           }
           @media (max-width: 767px) {
-            .home-burger-menu {
-              display: flex;
-              padding: var(--dl-space-space-halfunit);
-              border-radius: var(--dl-radius-radius-radius4);
-              background-color: var(--dl-color-gray-black);
-            }
             .home-icon {
               fill: var(--dl-color-gray-white);
             }
@@ -1205,6 +1229,17 @@ const Home = (props) => {
             }
             .home-service-card2 {
               width: 100%;
+            }
+          }
+          .logo-spinning {
+            animation: logo-spin infinite 4s linear;
+          }
+          @keyframes logo-spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
             }
           }
         `}

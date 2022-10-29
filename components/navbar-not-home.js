@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import { imgLoader } from '../utils/imgLoader'  
+import Image from 'next/image';
 
 import PropTypes from 'prop-types'
 
@@ -12,16 +14,13 @@ const NavbarNotHome = (props) => {
       >
         <div className="navbar-not-home-navbar">
           <div className="navbar-not-home-left-side">
-            <img
-              alt="image"
-              src="https://cdn.discordapp.com/attachments/1034048281761828955/1034422539218329670/bookwarm.png"
-              className="navbar-not-home-image"
+          <Image
+              loader={imgLoader}
+              src="assets\logos\bookwarm.png"
+              alt="Bookwarm Mini Logo"
+              width={48}
+              height={48}
             />
-            <div data-type="BurgerMenu" className="navbar-not-home-burger-menu">
-              <svg viewBox="0 0 1024 1024" className="navbar-not-home-icon">
-                <path d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"></path>
-              </svg>
-            </div>
             <div className="navbar-not-home-links-container">
               <Link href="/">
                 <a className="navbar-not-home-link01 anchor">{props.Link}</a>
@@ -70,10 +69,12 @@ const NavbarNotHome = (props) => {
           <div className="navbar-not-home-right-side"></div>
           <div data-type="MobileMenu" className="navbar-not-home-mobile-menu">
             <div className="navbar-not-home-container">
-              <img
-                alt={props.image_alt1}
-                src={props.image_src1}
-                className="navbar-not-home-image1"
+              <Image
+                loader={imgLoader}
+                src="assets\logos\bookwarm.png"
+                alt="Bookwarm Mini Logo"
+                width={48}
+                height={48}
               />
               <div
                 data-type="CloseMobileMenu"
@@ -137,11 +138,6 @@ const NavbarNotHome = (props) => {
             align-self: center;
             object-fit: cover;
             margin-right: var(--dl-space-space-doubleunit);
-          }
-          .navbar-not-home-burger-menu {
-            display: none;
-            align-items: flex-start;
-            flex-direction: column;
           }
           .navbar-not-home-icon {
             width: 36px;
@@ -335,12 +331,6 @@ const NavbarNotHome = (props) => {
             position: absolute;
           }
           @media (max-width: 767px) {
-            .navbar-not-home-burger-menu {
-              display: flex;
-              padding: var(--dl-space-space-halfunit);
-              border-radius: var(--dl-radius-radius-radius4);
-              background-color: var(--dl-color-gray-black);
-            }
             .navbar-not-home-icon {
               fill: var(--dl-color-gray-white);
             }

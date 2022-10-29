@@ -3,6 +3,8 @@ import Head from 'next/head'
 
 import FooterWithCredits from '../components/footer-with-credits'
 import NavbarNotHome from '../components/navbar-not-home'
+import { imgLoader } from '../utils/imgLoader'
+import Image from 'next/image';
 
 const Login = (props) => {
   return (

@@ -16,6 +16,7 @@ const Books = (props) => {
   const router = useRouter()
   const {id} = router.query
 
+  // Get book info
   const [dataResponse, setDataResponse] = useState([]);
   useEffect(() => {
     async function getPageData() {
@@ -26,6 +27,46 @@ const Books = (props) => {
     }
     getPageData();
   }, [id]);
+  const bookContent = JSON.stringify(dataResponse)
+
+  // Get book authors
+  const [authorResponse, setAuthorResponse] = useState([]);
+  useEffect(() => {
+    async function getPageData() {
+      const apiURLEndpoint =  `http://localhost:3000/api/authors/findBookAuthor?id=${id}`;
+      const response = await fetch(apiURLEndpoint);
+      const res = await response.json();
+      setAuthorResponse(res.Books);
+    }
+    getPageData();
+  }, [id]);
+  const authorContent = JSON.stringify(authorResponse)
+
+  // Get book genres
+  const [genreResponse, setGenreResponse] = useState([]);
+  useEffect(() => {
+    async function getPageData() {
+      const apiURLEndpoint =  `http://localhost:3000/api/genres/findBookGenre?id=${id}`;
+      const response = await fetch(apiURLEndpoint);
+      const res = await response.json();
+      setGenreResponse(res.Books);
+    }
+    getPageData();
+  }, [id]);
+  const genreContent = JSON.stringify(genreResponse)
+
+  // Get book publisher
+  const [publisherResponse, setPublisherResponse] = useState([]);
+  useEffect(() => {
+    async function getPageData() {
+      const apiURLEndpoint =  `http://localhost:3000/api/publishers/findBookPublisher?id=${id}`;
+      const response = await fetch(apiURLEndpoint);
+      const res = await response.json();
+      setPublisherResponse(res.Books);
+    }
+    getPageData();
+  }, [id]);
+  const publisherContent = JSON.stringify(publisherResponse)
 
   return (
     <>
@@ -37,7 +78,7 @@ const Books = (props) => {
 
         <div className="books-content-container">{
         // If dataResponse is not an empty-array-as-string, then render the data
-        JSON.stringify(dataResponse) !== '[]' ? (
+        bookContent !== '[]' ? (
           dataResponse.map((Books) => {
               
             const bookCoverSource = '/' + Books.cover_source;
@@ -64,10 +105,45 @@ const Books = (props) => {
                 </div>
                 <div className="column">
                   <div className="book-author">
-                    Tác giả: {false ? 'true' : '<cần bổ sung>'}
+                    Tác giả:
+                    {
+                      authorContent !== '[]' ? (
+                        authorResponse.map((Books) => {
+                          return (
+                            // Author names are separated by commas
+                            <span key={Books.author_name}> {Books.author_name}, </span>
+                          )
+                        }
+                      )) : (
+                        <span> ~cần bổ sung~</span>
+                    )}
                   </div>
                   <div className="book-publisher">
-                    Nhà xuất bản: {Books.publisher_id}
+                    Nhà xuất bản:
+                    {
+                      publisherContent !== '[]' ? (
+                        publisherResponse.map((Books) => {
+                          return (
+                            <span key={Books.publisher_name}> {Books.publisher_name}</span>
+                          )
+                        }
+                      )) : (
+                        <span> ~cần bổ sung~</span>
+                    )}
+                  </div>
+                  <div className="book-category">
+                    Thể loại:
+                    {
+                      genreContent !== '[]' ? (
+                        genreResponse.map((Books) => {
+                          return (
+                            // Genre names are separated by commas
+                            <span key={Books.category_name}> {Books.category_name}, </span>
+                          )
+                        }
+                      )) : (
+                        <span> ~cần bổ sung~</span>
+                    )}
                   </div>
                   <div className="book-published-date">
                     Ngày xuất bản: {bookPublicationDate}
@@ -106,7 +182,9 @@ const Books = (props) => {
           .book-title {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            margin-top: 5rem;
+
           }
 
           .books-content {

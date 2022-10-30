@@ -15,8 +15,8 @@ export default function Y() {
         getPageData();
     }, []);
     return(
-        <div>
-            {dataResponse.map((bookwarmdb) => {
+        <div>{
+            dataResponse.map((bookwarmdb) => {
             return (
             <div key={bookwarmdb.book_id}>
                 <div>{bookwarmdb.title}</div>

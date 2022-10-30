@@ -2,6 +2,10 @@ import mysql from "mysql2/promise";
 
 let DB_NAME = "bookwarmdb";
 
+async function getQuery(id) {
+    return "SELECT * FROM books WHERE book_id = 6;";
+}
+
 export default async function handler(req, res) {
   const dbconnection = await mysql.createConnection({
     host: process.env.DB_HOST,
@@ -11,10 +15,12 @@ export default async function handler(req, res) {
     password: process.env.DB_PASSWORD,
   });
 
+  let id = 6;
+
   try {
-    const query = 'SELECT * FROM books WHERE book_id = ?';
-    const values = [req.query.id];
-    const [data] = await dbconnection.execute(query, values);
+    const query = "SELECT * FROM books WHERE book_id = 6;";
+    const values = [];
+    const [data] = await dbconnection.execute(`SELECT * FROM books WHERE book_id = ${id};`, values);
     dbconnection.end();
 
     res.status(200).json({ Books: data });

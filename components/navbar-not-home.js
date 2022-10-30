@@ -16,7 +16,7 @@ const NavbarNotHome = (props) => {
           <div className="navbar-not-home-left-side">
           <Image
               loader={imgLoader}
-              src="assets\logos\bookwarm.png"
+              src="\assets\logos\bookwarm.png"
               alt="Bookwarm Mini Logo"
               width={48}
               height={48}
@@ -71,7 +71,7 @@ const NavbarNotHome = (props) => {
             <div className="navbar-not-home-container">
               <Image
                 loader={imgLoader}
-                src="assets\logos\bookwarm.png"
+                src="\assets\logos\bookwarm.png"
                 alt="Bookwarm Mini Logo"
                 width={48}
                 height={48}

@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   try {
     const query = 'SELECT * FROM books WHERE book_id = ?';
-    const values = [req.query.id];
+    const values = [6]; // todo
     const [data] = await dbconnection.execute(query, values);
     dbconnection.end();
 

@@ -22,7 +22,7 @@ const Home = (props) => {
             <div className="home-left-side">
             <Image
               loader={imgLoader}
-              src="assets\logos\bookwarm.png"
+              src="\assets\logos\bookwarm.png"
               alt="Bookwarm Mini Logo"
               width={48}
               height={48}

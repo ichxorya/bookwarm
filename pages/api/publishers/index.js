@@ -13,15 +13,14 @@ export default async function handler(req, res) {
 
   try {
     const query = `
-        SELECT book_id, title, cover_source 
-        FROM books 
-        ORDER BY book_id ASC
+        select publisher_id, publisher_name 
+        from publishers p
     `;
     const values = [];
     const [data] = await dbconnection.execute(query, values);
     dbconnection.end();
 
-    res.status(200).json({ Books: data });
+    res.status(200).json({ Publishers: data });
     
   } catch (error) {
     res.status(500).json({ error: error.message });

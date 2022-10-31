@@ -13,16 +13,15 @@ export default async function handler(req, res) {
 
   try {
     const query = `
-        select *
-        from books b
-        join authors_write_books awb on awb.book_id = b.book_id
-        where awb.author_id = ?;
+        select distinct author_name 
+        from authors a 
+        where a.author_id = ?
     `;
     const values = [req.query.id];
     const [data] = await dbconnection.execute(query, values);
     dbconnection.end();
 
-    res.status(200).json({ Authors: data });
+    res.status(200).json({ Books: data });
     
   } catch (error) {
     res.status(500).json({ error: error.message });

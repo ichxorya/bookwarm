@@ -47,6 +47,7 @@ const Books = (props) => {
                         alt=""
                         width={128}
                         height={128}
+                        loading='lazy'
                       />
                     </div>
                   </a>
@@ -68,6 +69,16 @@ const Books = (props) => {
             align-items: center;
             flex-direction: column;
             justify-content: flex-end;
+          }
+
+          .books-content-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
           }
         `}
       </style>

@@ -161,8 +161,8 @@ const Books = (props) => {
         </div>
 
         <div className="nextOrPrev-book">
-          <a href={`/books/${id - 1}`}>Prev Book</a>
-          <a href={`/books/${id - -1}`}>Next Book</a>
+          <a href={`/books/${id - 1}`}>👈👈👈👈</a>
+          <a href={`/books/${id - -1}`}>🤜🤜🤜🤜</a>
         </div>
 
         <FooterWithCredits rootClassName="footer-with-credits-root-class-name1"></FooterWithCredits>

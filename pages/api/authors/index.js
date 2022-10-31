@@ -13,12 +13,10 @@ export default async function handler(req, res) {
 
   try {
     const query = `
-        select *
-        from books b
-        join authors_write_books awb on awb.book_id = b.book_id
-        where awb.author_id = ?;
+        select author_id, author_name 
+        from authors a
     `;
-    const values = [req.query.id];
+    const values = [];
     const [data] = await dbconnection.execute(query, values);
     dbconnection.end();
 

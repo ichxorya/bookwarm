@@ -53,19 +53,21 @@ const Authors = (props) => {
         <NavbarNotHome rootClassName="navbar-not-home-root-class-name1"></NavbarNotHome>
 
         <div className="authors-content-container">
-          
-          <div className='authors-name'>
-            <h2>Những tác phẩm của {authorName}</h2>
-          </div>
 
+        <div className="authors-name">{authorName != "" ? "Sách viết bởi " + authorName : ""}</div>
           <div className="author-books">{
-            dataResponse.map((Authors) => (
-              <div className="author-book" key={Authors.book_id}>
-                <div className="author-book-name">
-                  <Link href={`/books/${Authors.book_id}`}>{Authors.title}</Link>
+            authorName != "" ? (
+              dataResponse.map((Authors) => (
+                <div className="author-book" key={Authors.book_id}>
+                  <div className="author-book-name">
+                    <Link href={`/books/${Authors.book_id}`}>{Authors.title}</Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <div className="authors-name">Không tìm thấy tác giả</div>
+            )
+            }
           </div>
 
         </div>

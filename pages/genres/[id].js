@@ -55,17 +55,21 @@ const Genres = (props) => {
         <div className="genres-content-container">
           
           <div className='genres-name'>
-            <h2>Sách thuộc thể loại {genreName}</h2>
+            <h2>{genreName != "" ? "Sách thuộc thể loại " + genreName : ""}</h2>
           </div>
 
           <div className="genre-books">{
+            genreName != "" ? (
             dataResponse.map((Genres) => (
               <div className="genre-book" key={Genres.book_id}>
                 <div className="genre-book-name">
                   <Link href={`/books/${Genres.book_id}`}>{Genres.title}</Link>
                 </div>
               </div>
-            ))}
+            ))) : (
+              <div className="genres-name">Không tìm thấy thể loại</div>
+            )
+            }
           </div>
 
         </div>

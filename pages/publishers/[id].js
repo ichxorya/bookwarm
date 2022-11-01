@@ -55,17 +55,21 @@ const Publishers = (props) => {
         <div className="publishers-content-container">
           
           <div className='publishers-name'>
-            <h2>Sách xuất bản bởi {publisherName}</h2>
+            <h2>{publisherName != "" ? "Sách xuất bản bởi " + publisherName : ""}</h2>
           </div>
 
           <div className="publisher-books">{
+            publisherName != "" ? (
             dataResponse.map((Genres) => (
               <div className="publisher-book" key={Genres.book_id}>
                 <div className="publisher-book-name">
                   <Link href={`/books/${Genres.book_id}`}>{Genres.title}</Link>
                 </div>
               </div>
-            ))}
+            ))) : (
+              <div className="publishers-name">Không tìm thấy nhà xuất bản</div>
+              )
+              }
           </div>
 
         </div>

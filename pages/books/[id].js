@@ -8,11 +8,8 @@ import { imgLoader } from '../../utils/imgLoader'
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 import { randomTitle } from '../../utils/randomTitle'
-import { handler } from '../api/books/[id]'
 
 const Books = (props) => {
-  const title = randomTitle()
-
   const router = useRouter()
   const {id} = router.query
 
@@ -33,7 +30,7 @@ const Books = (props) => {
   const [authorResponse, setAuthorResponse] = useState([]);
   useEffect(() => {
     async function getPageData() {
-      const apiURLEndpoint =  `http://localhost:3000/api/authors/findBookAuthor?id=${id}`;
+      const apiURLEndpoint =  `http://localhost:3000/api/books/findBookAuthor?id=${id}`;
       const response = await fetch(apiURLEndpoint);
       const res = await response.json();
       setAuthorResponse(res.Books);
@@ -46,7 +43,7 @@ const Books = (props) => {
   const [genreResponse, setGenreResponse] = useState([]);
   useEffect(() => {
     async function getPageData() {
-      const apiURLEndpoint =  `http://localhost:3000/api/genres/findBookGenre?id=${id}`;
+      const apiURLEndpoint =  `http://localhost:3000/api/books/findBookGenre?id=${id}`;
       const response = await fetch(apiURLEndpoint);
       const res = await response.json();
       setGenreResponse(res.Books);
@@ -59,7 +56,7 @@ const Books = (props) => {
   const [publisherResponse, setPublisherResponse] = useState([]);
   useEffect(() => {
     async function getPageData() {
-      const apiURLEndpoint =  `http://localhost:3000/api/publishers/findBookPublisher?id=${id}`;
+      const apiURLEndpoint =  `http://localhost:3000/api/books/findBookPublisher?id=${id}`;
       const response = await fetch(apiURLEndpoint);
       const res = await response.json();
       setPublisherResponse(res.Books);
@@ -71,9 +68,9 @@ const Books = (props) => {
   return (
     <>
       <div className="books-container">
-        <NextSeo
-          title={title}
-        />
+        <Head>
+          <title>{randomTitle()}</title>  
+        </Head>
         <NavbarNotHome rootClassName="navbar-not-home-root-class-name1"></NavbarNotHome>
 
         <div className="books-content-container">{

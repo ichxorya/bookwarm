@@ -9,14 +9,13 @@ import FooterWithCredits from '../components/footer-with-credits'
 import { randomTitle } from '../utils/randomTitle'
 
 const Home = (props) => {
-  const title = randomTitle()
 
   return (
     <>
       <div className="home-container">
-        <NextSeo
-        title={title} 
-        />
+        <Head>
+          <title>{randomTitle()}</title>  
+        </Head>
         <div data-role="Header" className="home-navbar-container">
           <div className="home-navbar">
             <div className="home-left-side">
@@ -250,12 +249,12 @@ const Home = (props) => {
         <div id="truefeatures" className="home-true-features">
           <div className="home-heading-container1">
             <h1 className="home-text50 section-Heading">
-              TÍNH NĂNG CỦA TRANG WEB
+              Ở ĐÂY CHÚNG TÔI CÓ...
             </h1>
           </div>
           <div className="home-cards-container1">
             <div className="home-service-card">
-              <h3 className="home-text51 card-Heading">Tài nguyên</h3>
+              <h3 className="home-text51 card-Heading">Tri thức cho bản thân</h3>
               <span className="home-text52">
                 <span className="card-Text">
                   Hàng nghìn cuốn sách và những người đứng sau chúng đang chờ
@@ -271,17 +270,16 @@ const Home = (props) => {
               </Link>
             </div>
             <div className="home-service-card1">
-              <h3 className="home-text57 card-Heading">Cộng đồng</h3>
+              <h3 className="home-text57 card-Heading">Cống hiến vì cộng đồng</h3>
               <span className="home-text58">
                 <span>
-                  Cùng đọc, suy ngẫm, trải nghiệm và viết nên những cảm nhận sâu
-                  sắc...
+                  Thế nhưng không phải cuốn sách nào cũng vẹn tròn thông tin...
                 </span>
                 <br></br>
               </span>
-              <Link href="/newsfeed">
+              <Link href="/books/todo">
                 <a className="home-link12">
-                  <span>Đâu? Cho cái ví dụ đi?</span>
+                  <span>Đừng lo, để tôi góp ý cho!</span>
                   <br></br>
                 </a>
               </Link>

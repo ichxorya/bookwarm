@@ -37,7 +37,7 @@ const NavbarNotHome = (props) => {
               <Link href="/publishers">
                 <a className="navbar-not-home-link07">{props.Link2}</a>
               </Link>
-              <Link href="/categories">
+              <Link href="/genres">
                 <a className="navbar-not-home-link09">{props.Link3}</a>
               </Link>
             </div>

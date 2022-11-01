@@ -10,59 +10,59 @@ import { NextSeo } from 'next-seo';
 import { randomTitle } from '../../utils/randomTitle'
 import Link from 'next/link'
 
-const Authors = (props) => {
+const Genres = (props) => {
 
   const router = useRouter()
   const {id} = router.query
 
 
-  // Get author's books
+  // Get genre's books
   const [dataResponse, setDataResponse] = useState([]);
   useEffect(() => {
     async function getPageData() {
-      const apiURLEndpoint =  `http://localhost:3000/api/authors/${id}`;
+      const apiURLEndpoint =  `http://localhost:3000/api/genres/${id}`;
       const response = await fetch(apiURLEndpoint);
       const res = await response.json();
-      setDataResponse(res.Authors);
+      setDataResponse(res.Genres);
     }
     getPageData();
   }, [id]);
   const bookList = JSON.stringify(dataResponse)
 
-  // Get the author's name
-  const [authorResponse, setAuthorResponse] = useState([]);
+  // Get the genre's name
+  const [genreResponse, setGenreResponse] = useState([]);
   useEffect(() => {
     async function getPageData() {
-      const apiURLEndpoint =  `http://localhost:3000/api/authors/findAuthorName?id=${id}`;
+      const apiURLEndpoint =  `http://localhost:3000/api/genres/findGenreName?id=${id}`;
       const response = await fetch(apiURLEndpoint);
       const res = await response.json();
-      setAuthorResponse(res.Authors);
+      setGenreResponse(res.Genres);
     }
     getPageData();
   }, [id]);
-  const authorNameJSON = JSON.stringify(authorResponse)
-  const _authorName = authorNameJSON.replace(/[\[\]"]+/g,'')
-  const authorName = _authorName.substring(13, _authorName.length - 1)
+  const genreNameJSON = JSON.stringify(genreResponse)
+  const _genreName = genreNameJSON.replace(/[\[\]"]+/g,'')
+  const genreName = _genreName.substring(15, _genreName.length - 1)
 
   return (
     <>
-      <div className="authors-container">
+      <div className="genres-container">
         <Head>
           <title>{randomTitle()}</title>  
         </Head>
         <NavbarNotHome rootClassName="navbar-not-home-root-class-name1"></NavbarNotHome>
 
-        <div className="authors-content-container">
+        <div className="genres-content-container">
           
-          <div className='authors-name'>
-            <h2>Những tác phẩm của {authorName}</h2>
+          <div className='genres-name'>
+            <h2>Sách thuộc thể loại {genreName}</h2>
           </div>
 
-          <div className="author-books">{
-            dataResponse.map((Authors) => (
-              <div className="author-book" key={Authors.book_id}>
-                <div className="author-book-name">
-                  <Link href={`/books/${Authors.book_id}`}>{Authors.title}</Link>
+          <div className="genre-books">{
+            dataResponse.map((Genres) => (
+              <div className="genre-book" key={Genres.book_id}>
+                <div className="genre-book-name">
+                  <Link href={`/books/${Genres.book_id}`}>{Genres.title}</Link>
                 </div>
               </div>
             ))}
@@ -70,16 +70,16 @@ const Authors = (props) => {
 
         </div>
 
-        <div className="nextOrPrev-author">
-          <a href={`/authors/${id - 1}`}>👈👈👈👈</a>
-          <a href={`/authors/${id - -1}`}>🤜🤜🤜🤜</a>
+        <div className="nextOrPrev-genre">
+          <a href={`/genres/${id - 1}`}>👈👈👈👈</a>
+          <a href={`/genres/${id - -1}`}>🤜🤜🤜🤜</a>
         </div>
 
         <FooterWithCredits rootClassName="footer-with-credits-root-class-name1"></FooterWithCredits>
       </div>
       <style jsx>
         {`
-          .authors-container {
+          .genres-container {
             width: 100%;
             height: 100%;
             display: flex;
@@ -89,14 +89,14 @@ const Authors = (props) => {
             background-color: #f5f5f5;
           }
 
-          .authors-name {
+          .genres-name {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 2rem;
             margin-top: 5rem;
           }
           
-          .author-book-name {
+          .genre-book-name {
             font-size: 1.5rem;
             font-weight: 300;
           }
@@ -113,17 +113,17 @@ const Authors = (props) => {
             padding: 10px;
           }
 
-          .nextOrPrev-author {
+          .nextOrPrev-genre {
             display: flex;
             align-items: flex-start;
             flex-direction: row;
           }
 
-          .nextOrPrev-author a {
+          .nextOrPrev-genre a {
             margin: 0 1rem;
           }
 
-          .nextOrPrev-author a:hover {
+          .nextOrPrev-genre a:hover {
             color: #7fff00;
           }
         `}
@@ -132,4 +132,4 @@ const Authors = (props) => {
   )
 }
 
-export default Authors
+export default Genres

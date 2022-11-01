@@ -1,6 +1,6 @@
 import mysql from "mysql2/promise";
 
-let DB_NAME = "exampledb";
+let DB_NAME = "bookwarmdb";
 
 export default async function handler(req, res) {
   const dbconnection = await mysql.createConnection({
@@ -10,13 +10,17 @@ export default async function handler(req, res) {
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
   });
+
   try {
-    const query = "SELECT id, uoh FROM cunny";
+    const query = `
+        select category_id, category_name 
+        from categories c
+    `;
     const values = [];
     const [data] = await dbconnection.execute(query, values);
     dbconnection.end();
 
-    res.status(200).json({ exampledb: data });
+    res.status(200).json({ Genres: data });
     
   } catch (error) {
     res.status(500).json({ error: error.message });

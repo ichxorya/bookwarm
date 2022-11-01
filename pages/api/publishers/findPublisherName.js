@@ -10,13 +10,18 @@ export default async function handler(req, res) {
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
   });
+
   try {
-    const query = "SELECT * FROM books WHERE cover_source = 'assets/bookcovers/temp.png' LIMIT 5;";
-    const values = [];
+    const query = `
+        select distinct publisher_name 
+        from publishers p
+        where p.publisher_id = ?
+    `;
+    const values = [req.query.id];
     const [data] = await dbconnection.execute(query, values);
     dbconnection.end();
 
-    res.status(200).json({ bookwarmdb: data });
+    res.status(200).json({ Publishers: data });
     
   } catch (error) {
     res.status(500).json({ error: error.message });

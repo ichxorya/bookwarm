@@ -10,35 +10,34 @@ import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 import { randomTitle } from '../../utils/randomTitle'
 
-const Publishers = (props) => { 
+const Genres = (props) => {
 
-  // Get all publishers
+  // Get all genres
   const [dataResponse, setDataResponse] = useState([]);
   useEffect(() => {
     async function getPageData() {
-      const apiURLEndpoint =  `http://localhost:3000/api/publishers`;
+      const apiURLEndpoint =  `http://localhost:3000/api/genres`;
       const response = await fetch(apiURLEndpoint);
       const res = await response.json();
-      setDataResponse(res.Publishers);
+      setDataResponse(res.Genres);
     }
     getPageData();
   }, []);
-
   return (
     <>
-      <div className="publishers-container">
+      <div className="genres-container">
         <Head>
           <title>{randomTitle()}</title>  
         </Head>
-        <NavbarNotHome rootClassName="navbar-not-home-root-class-name5"></NavbarNotHome>
+        <NavbarNotHome rootClassName="navbar-not-home-root-class-name2"></NavbarNotHome>
 
-        <div className="publishers-list">{
-          dataResponse.map((Publishers) => {
+        <div className="genres-list">{
+          dataResponse.map((Genres) => {
             return (
-              <div className="publisher" key={Publishers.publisher_id}>
-                <div className="publisher-name">
-                  <Link href={`/publishers/${Publishers.publisher_id}`}>
-                    {Publishers.publisher_name}
+              <div className="genres" key={Genres.category_id}>
+                <div className="genres-name">
+                  <Link href={`/genres/${Genres.category_id}`}>
+                    {Genres.category_name}
                   </Link>
                 </div>
               </div>
@@ -46,11 +45,11 @@ const Publishers = (props) => {
           }
         )}</div>
 
-        <FooterWithCredits rootClassName="footer-with-credits-root-class-name"></FooterWithCredits>
+        <FooterWithCredits rootClassName="footer-with-credits-root-class-name2"></FooterWithCredits>
       </div>
       <style jsx>
         {`
-          .publishers-container {
+          .genres-container {
             width: 100%;
             display: flex;
             overflow: auto;
@@ -60,7 +59,7 @@ const Publishers = (props) => {
             justify-content: flex-end;
           }
 
-          .publishers-list {
+          .genres-list {
             margin-top: 5rem;
             width: 100%;
             display: flex;
@@ -70,7 +69,7 @@ const Publishers = (props) => {
             padding: 0 0 0 0;
           }
 
-          .publisher-name {
+          .genre-name {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -82,4 +81,4 @@ const Publishers = (props) => {
   )
 }
 
-export default Publishers
+export default Genres

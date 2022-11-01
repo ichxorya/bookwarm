@@ -10,13 +10,13 @@ import { imgLoader } from '../../utils/imgLoader'
 import Image from 'next/image';
 import { randomTitle } from '../../utils/randomTitle'
 
-const Books = (props) => {
+const ToDoBooks = (props) => {
 
   const [dataResponse, setDataResponse] = useState([]);
     
   useEffect(() => {
       async function getPageData() {
-          const apiURLEndpoint =  `http://localhost:3000/api/books`;
+          const apiURLEndpoint =  `http://localhost:3000/api/books/todo`;
           const response = await fetch(apiURLEndpoint);
           const res = await response.json();
           setDataResponse(res.Books);
@@ -85,4 +85,4 @@ const Books = (props) => {
   )
 }
 
-export default Books
+export default ToDoBooks

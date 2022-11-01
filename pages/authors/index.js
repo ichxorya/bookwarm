@@ -11,7 +11,6 @@ import { NextSeo } from 'next-seo';
 import { randomTitle } from '../../utils/randomTitle'
 
 const Authors = (props) => {
-  const title = randomTitle()
 
   // Get all authors
   const [dataResponse, setDataResponse] = useState([]);

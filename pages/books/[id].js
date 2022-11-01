@@ -85,7 +85,7 @@ const Books = (props) => {
               (Books.publication_date).substring(8, 10) + '/' +
               (Books.publication_date).substring(5, 7) + '/' +
               (Books.publication_date).substring(0, 4)
-            ) : '<cần bổ sung>';
+            ) : '~cần bổ sung~';
 
           return (
           <div key={Books.book_id}>
@@ -108,7 +108,9 @@ const Books = (props) => {
                         authorResponse.map((Books) => {
                           return (
                             // Author names are separated by commas
-                            <span key={Books.author_name}> {Books.author_name}, </span>
+                            <span key={Books.author_id}> 
+                              <a href={`/authors/${Books.author_id}`}>{" " + Books.author_name + ", "}</a>
+                            </span>
                           )
                         }
                       )) : (
@@ -121,7 +123,9 @@ const Books = (props) => {
                       publisherContent !== '[]' ? (
                         publisherResponse.map((Books) => {
                           return (
-                            <span key={Books.publisher_name}> {Books.publisher_name}</span>
+                            <span key={Books.publisher_id}> 
+                              <a href={`/publishers/${Books.publisher_id}`}>{" " + Books.publisher_name + ", "}</a>
+                            </span>
                           )
                         }
                       )) : (
@@ -135,7 +139,9 @@ const Books = (props) => {
                         genreResponse.map((Books) => {
                           return (
                             // Genre names are separated by commas
-                            <span key={Books.category_name}> {Books.category_name}, </span>
+                            <span key={Books.category_id}> 
+                              <a href={`/genres/${Books.category_id}`}>{" " + Books.category_name + ", "}</a>
+                            </span>
                           )
                         }
                       )) : (

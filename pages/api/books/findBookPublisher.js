@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   try {
     const query = `
-        select publisher_name
+        select p.publisher_name, p.publisher_id
         from publishers p 
         join books b ON p.publisher_id = b.publisher_id 
         where b.book_id = ?

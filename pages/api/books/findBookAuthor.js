@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   try {
     const query = `
-        select distinct author_name 
+        select distinct a.author_name, a.author_id
         from authors a 
         join authors_write_books awb ON a.author_id = awb.author_id 
         where awb.book_id = ?

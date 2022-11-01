@@ -15,6 +15,7 @@ export default async function handler(req, res) {
     const query = `
         select author_id, author_name 
         from authors a
+        order by author_id
     `;
     const values = [];
     const [data] = await dbconnection.execute(query, values);

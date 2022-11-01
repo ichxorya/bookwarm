@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   try {
     const query = `
-        select distinct category_name 
+        select distinct g.category_name, g.category_id
         from categories g 
         join books_have_genres bhg ON g.category_id = bhg.category_id 
         where bhg.book_id = ?

@@ -15,6 +15,7 @@ export default async function handler(req, res) {
     const query = `
         select category_id, category_name 
         from categories c
+        order by category_id
     `;
     const values = [];
     const [data] = await dbconnection.execute(query, values);

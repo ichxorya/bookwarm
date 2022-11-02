@@ -63,7 +63,35 @@ const Books = (props) => {
     }
     getPageData();
   }, [id]);
-  const publisherContent = JSON.stringify(publisherResponse)
+  const publisherContent = JSON.stringify(publisherResponse)  
+  
+  // Get book reviews
+  const [reviewResponse, setReviewResponse] = useState([]);
+  useEffect(() => {
+    async function getPageData() {
+      const apiURLEndpoint =  `http://localhost:3000/api/books/findBookReview?id=${id}`;
+      const response = await fetch(apiURLEndpoint);
+      const res = await response.json();
+      setReviewResponse(res.Books);
+    }
+    getPageData();
+  }, [id]);
+  const reviewContent = JSON.stringify(reviewResponse)
+  
+  // Get book average rating
+  const [ratingResponse, setRatingResponse] = useState([]);
+  useEffect(() => {
+    async function getPageData() {
+      const apiURLEndpoint =  `http://localhost:3000/api/books/findBookAvgRating?id=${id}`;
+      const response = await fetch(apiURLEndpoint);
+      const res = await response.json();
+      setRatingResponse(res.Books);
+    }
+    getPageData();
+  }, [id]);
+  const ratingContent = JSON.stringify(ratingResponse)
+  const _avgRating = (ratingContent.substring(16, ratingContent.length - 3))
+  const avgRating = (_avgRating != "ul") ? _avgRating : "chưa có"
 
   return (
     <>
@@ -153,6 +181,9 @@ const Books = (props) => {
                   </div>
                   <div className="book-description">
                     Số trang: {Books.pages}
+                  </div>
+                  <div className="book-avg-rating">
+                    Đánh giá trung bình: {avgRating}
                   </div>
                 </div>
               </div>

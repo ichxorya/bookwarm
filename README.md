@@ -7,8 +7,12 @@ Bookwarm Project - Database Course Project
 * Frontpage
   * [x] Completed (will be refactored if needed).
 * General
+  * [x] Return a "not available" site if a book, author, publisher or genre is not found.
   * [x] Routing from books to other pages and the otherway around (from a book to the previous/next book, to its authors, to its publisher, to its genres - or from an author, to their books...).
   * [ ] Routing from books to their reviews.
+  * [ ] Create a newsfeed.
+  * [ ] Apply a recommender system to the newsfeed.
+  * [ ] Search for books, authors, publishers and genres. (Moning, 02/11)
 * Books
   * [x] Preview all books in the index page of books.
   * [x] Preview all "todo" books in the todo of books (books that lack details in authors/genres/publication date/pages).
@@ -24,9 +28,17 @@ Bookwarm Project - Database Course Project
 * Genres
   * [x] Preview all genres/categories in the index page of genres.
   * [x] View any genre in detail: their name and their books.
+* Admin
+  * [] Add/Remove/Edit information of books, authors, publishers, genres and users.
+* Users
+  * [] Register for their accounts.
+  * [] Login to their accounts.
+  * [] Edit their accounts.
+  * [] Remove their accounts.
   
 **Credits:**
 
+* The frontend was initially built with TeleportHQ: <http://www.teleportHQ.io>
 * Logo and Book Covers: <https://StableDiffusionWeb.com>
 * The crying emoji 😭: <https://twemoji.twitter.com/>
 

@@ -42,30 +42,19 @@ const NavbarNotHome = (props) => {
               </Link>
             </div>
           </div>
-          <div className="navbar-not-home-mid-side">
-            <select className="navbar-not-home-select">
-              <option value="books">Sách</option>
-              <option value="publishers">NXB</option>
-              <option value="authors">Tác giả</option>
-              <option value="categories">Thể loại</option>
-            </select>
-            <input
-              type="text"
-              placeholder="thanh tìm kiếm"
-              className="navbar-not-home-textinput input"
-            />
-            <button className="navbar-not-home-button button">
-              {props.button}
-            </button>
-          </div>
-          <Link href="/login">
+          
+          <Link href="/search">
+                <a className="search-button">Kiềm tím (đừng dùng chưa xong đâu)</a>
+          </Link>
+
+          {/* <Link href="/login">
             <a className="navbar-not-home-link10 button">
               <span>
                 <span>Đăng nhập</span>
                 <br></br>
               </span>
             </a>
-          </Link>
+          </Link> */}
           <div className="navbar-not-home-right-side"></div>
           <div data-type="MobileMenu" className="navbar-not-home-mobile-menu">
             <div className="navbar-not-home-container">
@@ -216,6 +205,16 @@ const NavbarNotHome = (props) => {
             background-color: #ff00ee;
           }
 
+          .search-button {
+            padding: var(--dl-space-space-halfunit);
+            align-self: center;
+            text-align: center;
+            transition: 0.3s;
+            margin-left: 1px;
+            border-radius: 0px;
+            background-color: #ff00ee;
+          }
+          
           .navbar-not-home-link10 {
             color: var(--dl-color-gray-white);
             transition: 0.3s;

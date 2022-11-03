@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   });
 
   try {
-    const query = 'SELECT * FROM books WHERE book_id = ?';
+    const query = 'SELECT * FROM books WHERE book_id = ? ';
     const values = [req.query.id];
     const [data] = await dbconnection.execute(query, values);
     dbconnection.end();

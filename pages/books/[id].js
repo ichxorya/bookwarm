@@ -199,6 +199,38 @@ const Books = (props) => {
           <a href={`/books/${id - -1}`}>🤜🤜🤜🤜</a>
         </div>
 
+        <div className="book-reviews">
+          <div className="book-review-title">Đánh giá</div>
+          {
+            reviewContent !== '[]' ? (
+              reviewResponse.map((Books) => {
+                return (
+                  <div key={Books.review_id}>
+                    <div className="book-review">
+                      <div className="book-reviewer">
+                        <a href={`/users/${Books.username}`}>{Books.username}</a>
+                      </div>
+                      <div className="book-review-rating">
+                        {Books.rating} điểm
+                      </div>
+                      <div className="book-review-content">
+                        {Books.comment}
+                      </div>
+                      <div className="book-review-separator">
+                        <hr></hr>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            )) : (
+              <div className="book-review">
+                Không có đánh giá.
+              </div>
+            )
+          }
+        </div>
+
         <FooterWithCredits rootClassName="footer-with-credits-root-class-name1"></FooterWithCredits>
       </div>
       <style jsx>
@@ -246,6 +278,52 @@ const Books = (props) => {
           .nextOrPrev-book a:hover {
             color: #7fff00;
           }
+
+          .book-reviews {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 5rem;
+          }
+          
+          .book-review-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            align-self: center;
+          }
+
+          .book-review {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 1rem;
+          }
+
+          .book-reviewer {
+            font-size: 1.5rem;
+            font-weight: 700;
+            align-self: center;
+          }
+
+          .book-review-rating {
+            font-size: 1.2rem;
+            font-weight: 700;
+            align-self: center;
+          }
+
+          .book-review-content {
+            font-size: 1.2rem;
+            font-weight: 400;
+          }
+
+          .book-review-separator {
+            width: 100%;
+            margin-top: 1rem;
+          }
+
         `}
       </style>
     </>

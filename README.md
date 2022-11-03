@@ -9,15 +9,14 @@ Bookwarm Project - Database Course Project
 * General
   * [x] Return a "not available" site if a book, author, publisher or genre is not found.
   * [x] Routing from books to other pages and the otherway around (from a book to the previous/next book, to its authors, to its publisher, to its genres - or from an author, to their books...).
-  * [ ] Routing from books to their reviews.
   * [ ] Create a newsfeed.
   * [ ] Apply a recommender system to the newsfeed.
-  * [ ] Search for books, authors, publishers and genres. (Moning, 02/11)
+  * [ ] Search for books, authors, publishers and genres.
 * Books
   * [x] Preview all books in the index page of books.
   * [x] Preview all "todo" books in the todo of books (books that lack details in authors/genres/publication date/pages).
-  * [x] View any book in detail: title, cover, authors, genres, publication date, number of pages.
-  * [ ] View book reviews (rating and comments).
+  * [x] View any book in detail: title, cover, authors, genres, publication date, number of pages, average rating.
+  * [x] View book reviews (rating and comments).
   * [ ] Write book reviews (rating and comments).
 * Authors
   * [x] Preview all authors in the index page of authors.

@@ -42,14 +42,14 @@ const Home = (props) => {
               </div>
             </div>
             <div className="home-right-side">
-              <Link href="/login">
+              {/* <Link href="/login">
                 <a className="home-link03 button">
                   <span>
                     <span>Đăng nhập</span>
                     <br></br>
                   </span>
                 </a>
-              </Link>
+              </Link> */}
             </div>
             <div data-type="MobileMenu" className="home-mobile-menu">
               <div className="home-container1">

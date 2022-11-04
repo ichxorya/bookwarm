@@ -201,6 +201,7 @@ const Books = (props) => {
 
         <div className="book-reviews">
           <div className="book-review-title">Đánh giá</div>
+          
           {
             reviewContent !== '[]' ? (
               reviewResponse.map((Books) => {
@@ -321,6 +322,28 @@ const Books = (props) => {
 
           .book-review-separator {
             width: 100%;
+            margin-top: 1rem;
+          }
+          
+          .form-group {
+            margin-bottom: 1rem;
+            align-self: center;
+          }
+
+          .review-form {
+            align-self: center;
+            border: 1px solid #bbb;
+          }
+
+          .review-form input {
+            width: 100%;
+          }
+
+          .review-form textarea {
+            width: 100%;
+          }
+
+          .review-form button {
             margin-top: 1rem;
           }
 

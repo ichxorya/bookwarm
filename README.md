@@ -28,12 +28,13 @@ Bookwarm Project - Database Course Project
   * [x] Preview all genres/categories in the index page of genres.
   * [x] View any genre in detail: their name and their books.
 * Admin
-  * [] Add/Remove/Edit information of books, authors, publishers, genres and users.
+  * [ ] Add/Remove/Edit information of books, authors, publishers, genres.
+  * [ ] Add/Remove/Edit information of users.
 * Users
-  * [] Register for their accounts.
-  * [] Login to their accounts.
-  * [] Edit their accounts.
-  * [] Remove their accounts.
+  * [ ] Register for their accounts.
+  * [ ] Login to their accounts.
+  * [ ] Edit their accounts.
+  * [ ] Remove their accounts.
   
 **Credits:**
 
@@ -47,4 +48,3 @@ Bookwarm Project - Database Course Project
 
 * Sounds
   * Ching Cheng Hanji - Peng Lexer Remix - <https://open.spotify.com/album/15BlFCcAqQaZNdygkDYOwe>
-  * Beat Một cái tên/Liên hoàn d- (prod. by Ansane) - <https://youtu.be/xh5inybsL6s>

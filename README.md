@@ -28,6 +28,7 @@ Bookwarm Project - Database Course Project
   * [ ] Create a newsfeed.
   * [ ] Apply a recommender system to the newsfeed.
   * [ ] Search for books, authors, publishers and genres.
+  * [ ] Filter/sort books, authors, publishers and genres by given filters (date, alphabetical,...).
 * Books
   * [x] Preview all books in the index page of books.
   * [x] Preview all "todo" books in the todo of books (books that lack details in authors/genres/publication date/pages).

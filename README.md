@@ -2,6 +2,19 @@
 
 Bookwarm Project - Database Course Project
 
+**Preview**
+![Homepage 1](_docs/homepage01.PNG)
+![Homepage 2](_docs/homepage02.PNG)
+![Homepage 3](_docs/homepage03.PNG)
+![Homepage 4](_docs/homepage04.PNG)
+![Books](_docs/books.PNG)
+![Books 56](_docs/books56.PNG)
+![Books 111](_docs/books111.PNG)
+![Books 111 reviews](_docs/books111reviews.PNG)
+![Authors 137](_docs/authors137.PNG)
+![Publishers 52](_docs/publishers52.PNG)
+![Genres 6](_docs/genres06.PNG)
+
 **Features:**
 
 * Frontpage
@@ -41,6 +54,7 @@ Bookwarm Project - Database Course Project
 * The frontend was initially built with TeleportHQ: <http://www.teleportHQ.io>
 * Logo and Book Covers: <https://StableDiffusionWeb.com>
 * The crying emoji 😭: <https://twemoji.twitter.com/>
+* Diagramming tool: <https://visual-paradigm.com>
 
 * Other Pictures/Photos:
   * Burning Books - <https://www.flickr.com/photos/44282411@N04/4141069138/> (found on wikipedia)
@@ -48,3 +62,9 @@ Bookwarm Project - Database Course Project
 
 * Sounds
   * Ching Cheng Hanji - Peng Lexer Remix - <https://open.spotify.com/album/15BlFCcAqQaZNdygkDYOwe>
+
+* Git-undo (for the nextjs_build branch)
+  * git reset --soft HEAD^
+  * then
+  * git push origin +nextjs_build --force
+  * <https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github>

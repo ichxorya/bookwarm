@@ -14,6 +14,7 @@ Bookwarm Project - Database Course Project
 ![Authors 137](_docs/authors137.PNG)
 ![Publishers 52](_docs/publishers52.PNG)
 ![Genres 6](_docs/genres06.PNG)
+![Chen Model] (_docs/ChenModel.PNG)
 
 **Features:**
 

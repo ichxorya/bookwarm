@@ -3,18 +3,20 @@
 Bookwarm Project - Database Course Project
 
 **Preview**
-![Homepage 1](_docs/homepage01.PNG)
-![Homepage 2](_docs/homepage02.PNG)
-![Homepage 3](_docs/homepage03.PNG)
-![Homepage 4](_docs/homepage04.PNG)
-![Books](_docs/books.PNG)
-![Books 56](_docs/books56.PNG)
-![Books 111](_docs/books111.PNG)
-![Books 111 reviews](_docs/books111reviews.PNG)
-![Authors 137](_docs/authors137.PNG)
-![Publishers 52](_docs/publishers52.PNG)
-![Genres 6](_docs/genres06.PNG)
-![Chen Model] (_docs/ChenModel.PNG)
+
+* ![ChenModel](_docs/ChenModel.PNG)
+* ![SQL](_docs/bookwarmdb.PNG)
+* ![Homepage 1](_docs/homepage01.PNG)
+* ![Homepage 2](_docs/homepage02.PNG)
+* ![Homepage 3](_docs/homepage03.PNG)
+* ![Homepage 4](_docs/homepage04.PNG)
+* ![Books](_docs/books.PNG)
+* ![Books 56](_docs/books56.PNG)
+* ![Books 111](_docs/books111.PNG)
+* ![Books 111 reviews](_docs/books111reviews.PNG)
+* ![Authors 137](_docs/authors137.PNG)
+* ![Publishers 52](_docs/publishers52.PNG)
+* ![Genres 6](_docs/genres06.PNG)
 
 **Features:**
 

@@ -4,8 +4,8 @@ Bookwarm Project - Database Course Project
 
 **Preview**
 
-* ![ChenModel](_docs/ChenModel.PNG)
-* ![SQL](_docs/bookwarmdb.PNG)
+* ![ChenModel](_docs/ChenModel.png)
+* ![SQL](_docs/bookwarmdb.png)
 * ![Homepage 1](_docs/homepage01.PNG)
 * ![Homepage 2](_docs/homepage02.PNG)
 * ![Homepage 3](_docs/homepage03.PNG)
